@@ -1,15 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const IconBase = ({ children, color, size, style = {}, width, height, ...props }, { reactIconBase = {} }) => {
-  const computedSize = size || reactIconBase.size || '1em'
+const IconBase = (
+  { children, color, size, style = {}, width, height, verticalAlign = 'middle', ...props },
+  { reactIconBase = {} },
+) => {
+  const computedSize = size || reactIconBase.size || '1em';
 
-  const baseStyle = reactIconBase.style || {}
+  const baseStyle = reactIconBase.style || {};
   const styleProp = {
-    verticalAlign: 'middle',
     ...baseStyle,
-    ...style
-  }
+    ...style,
+  };
+  if (verticalAlign !== 'none') styleProp.verticalAlign = verticalAlign;
 
   const computedColor = color || style.color || reactIconBase.color || baseStyle.color
   if (computedColor) {
