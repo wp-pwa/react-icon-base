@@ -65,6 +65,18 @@ Context can be overriden inline, like so:
 <Icon size={30} color='aliceblue' style={{ ... }} />
 ```
 
+A css `vertical-align` is added with `'middle'` by default. You can pass a `verticalAlign` prop to remove it using `'none'`:
+
+```js
+<Icon verticalAlign='none' />
+```
+
+Or change it using any other option:
+
+```js
+<Icon verticalAlign='top' />
+```
+
 ### Licence
 
 MIT
